@@ -127,9 +127,6 @@ def logout():
     return redirect(url_for('index'))
     # return render_template('logout.html')
 
-
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
@@ -360,7 +357,7 @@ def load_user(user_id):
 
 
 if __name__ == '__main__':
-    app.run(host='dataset-labelling-app.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))
+    app.run(host='0.0.0.0', port = int(os.env.get('PORT',5000), debug=True))
 
 # return app
 
