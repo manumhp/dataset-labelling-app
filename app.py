@@ -359,7 +359,7 @@ def load_user(user_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='localhost', port = int(os.env.get('PORT',5000), debug=True)
 
 # return app
 
