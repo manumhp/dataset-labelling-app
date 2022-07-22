@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -129,7 +130,7 @@ def logout():
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 

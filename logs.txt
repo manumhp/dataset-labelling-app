@@ -1,0 +1,71 @@
+2022-07-22T15:18:26.661478+00:00 app[api]: Release v1 created by user manu.puthiyadath@tum.de
+2022-07-22T15:18:26.661478+00:00 app[api]: Initial release by user manu.puthiyadath@tum.de
+2022-07-22T15:18:41.507378+00:00 app[api]: Enable Logplex by user manu.puthiyadath@tum.de
+2022-07-22T15:18:41.507378+00:00 app[api]: Release v2 created by user manu.puthiyadath@tum.de
+2022-07-22T15:18:52.504055+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=dataset-labelling-app.herokuapp.com request_id=77eb5afc-2353-47d8-af6a-748977256146 fwd="83.171.167.9" dyno= connect= service= status=502 bytes= protocol=https
+2022-07-22T15:20:09.270549+00:00 app[api]: Running release v3 commands by user manu.puthiyadath@tum.de
+2022-07-22T15:20:09.270549+00:00 app[api]: Attach DATABASE (@ref:postgresql-octagonal-09687) by user manu.puthiyadath@tum.de
+2022-07-22T15:20:09.288309+00:00 app[api]: @ref:postgresql-octagonal-09687 completed provisioning, setting DATABASE_URL. by user manu.puthiyadath@tum.de
+2022-07-22T15:20:09.288309+00:00 app[api]: Release v4 created by user manu.puthiyadath@tum.de
+2022-07-22T15:24:40.000000+00:00 app[api]: Build started by user manu.puthiyadath@tum.de
+2022-07-22T15:25:21.897152+00:00 app[api]: Release v5 created by user manu.puthiyadath@tum.de
+2022-07-22T15:25:21.897152+00:00 app[api]: Deploy 3fb387bc by user manu.puthiyadath@tum.de
+2022-07-22T15:25:21.913540+00:00 app[api]: Scaled to web@1:Free by user manu.puthiyadath@tum.de
+2022-07-22T15:25:27.502321+00:00 heroku[web.1]: Starting process with command `gunicorn app:app`
+2022-07-22T15:25:28.807692+00:00 app[web.1]: [2022-07-22 15:25:28 +0000] [4] [INFO] Starting gunicorn 20.1.0
+2022-07-22T15:25:28.808085+00:00 app[web.1]: [2022-07-22 15:25:28 +0000] [4] [INFO] Listening at: http://0.0.0.0:19698 (4)
+2022-07-22T15:25:28.808134+00:00 app[web.1]: [2022-07-22 15:25:28 +0000] [4] [INFO] Using worker: sync
+2022-07-22T15:25:28.811907+00:00 app[web.1]: [2022-07-22 15:25:28 +0000] [9] [INFO] Booting worker with pid: 9
+2022-07-22T15:25:28.865893+00:00 app[web.1]: [2022-07-22 15:25:28 +0000] [10] [INFO] Booting worker with pid: 10
+2022-07-22T15:25:29.176793+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+2022-07-22T15:25:29.176863+00:00 app[web.1]: warnings.warn(FSADeprecationWarning(
+2022-07-22T15:25:29.193754+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+2022-07-22T15:25:29.193756+00:00 app[web.1]: warnings.warn(FSADeprecationWarning(
+2022-07-22T15:25:29.201542+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+2022-07-22T15:25:29.201543+00:00 app[web.1]: warnings.warn(FSADeprecationWarning(
+2022-07-22T15:25:29.216758+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+2022-07-22T15:25:29.216762+00:00 app[web.1]: warnings.warn(FSADeprecationWarning(
+2022-07-22T15:25:29.336442+00:00 heroku[web.1]: State changed from starting to up
+2022-07-22T15:25:34.000000+00:00 app[api]: Build succeeded
+2022-07-22T15:27:37.936883+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask/app.py:1777: UserWarning: Current server name 'dataset-labelling-app.herokuapp.com' doesn't match configured server name '127.0.0.1:5000'
+2022-07-22T15:27:37.936896+00:00 app[web.1]: return self.url_map.bind_to_environ(
+2022-07-22T15:27:37.936961+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=f1fc0932-5a16-4748-85cf-0292d8ad9355 fwd="83.171.167.9" dyno=web.1 connect=0ms service=3ms status=404 bytes=368 protocol=https
+2022-07-22T15:27:37.937916+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask/sessions.py:228: UserWarning: The session cookie domain is an IP address. This may not work as intended in some browsers. Add an entry to your hosts file, for example "localhost.localdomain", and use that instead.
+2022-07-22T15:27:37.937919+00:00 app[web.1]: warnings.warn(
+2022-07-22T15:27:37.938464+00:00 app[web.1]: 10.1.12.92 - - [22/Jul/2022:15:27:37 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:27:44.448057+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=aee3ab61-d39a-494d-962e-d6692045183b fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:27:44.449895+00:00 app[web.1]: 10.1.12.92 - - [22/Jul/2022:15:27:44 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:27:50.911294+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=f49af5e7-5e71-47fd-b7a6-bff3221197eb fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:27:50.913262+00:00 app[web.1]: 10.1.12.92 - - [22/Jul/2022:15:27:50 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:28:01.402332+00:00 heroku[router]: at=info method=GET path="/dataset" host=dataset-labelling-app.herokuapp.com request_id=2f8746c0-48c2-435c-80bc-c76d2c9a7ee7 fwd="83.171.167.9" dyno=web.1 connect=0ms service=1ms status=404 bytes=368 protocol=https
+2022-07-22T15:28:01.404241+00:00 app[web.1]: 10.1.12.92 - - [22/Jul/2022:15:28:01 +0000] "GET /dataset HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:28:46.606097+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=927942f1-9ee6-4a1d-9d05-1e0b804fc6a1 fwd="83.171.167.9" dyno=web.1 connect=0ms service=1ms status=404 bytes=368 protocol=https
+2022-07-22T15:28:46.608644+00:00 app[web.1]: 10.1.92.61 - - [22/Jul/2022:15:28:46 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:30:45.893212+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=9afdb086-bd8c-4946-b3b3-431f0289a050 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:30:45.897856+00:00 app[web.1]: 10.1.32.153 - - [22/Jul/2022:15:30:45 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+2022-07-22T15:37:13.012710+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask/app.py:1777: UserWarning: Current server name 'dataset-labelling-app.herokuapp.com' doesn't match configured server name '127.0.0.1:5000'
+2022-07-22T15:37:13.012718+00:00 app[web.1]: return self.url_map.bind_to_environ(
+2022-07-22T15:37:13.012957+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=3682939f-3ed8-4d55-8a10-3f369cea54c2 fwd="54.174.217.6" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:13.013621+00:00 app[web.1]: /app/.heroku/python/lib/python3.10/site-packages/flask/sessions.py:228: UserWarning: The session cookie domain is an IP address. This may not work as intended in some browsers. Add an entry to your hosts file, for example "localhost.localdomain", and use that instead.
+2022-07-22T15:37:13.013623+00:00 app[web.1]: warnings.warn(
+2022-07-22T15:37:13.014092+00:00 app[web.1]: 10.1.43.211 - - [22/Jul/2022:15:37:13 +0000] "GET / HTTP/1.1" 404 207 "-" "Slackbot-LinkExpanding 1.0 (+https://api.slack.com/robots)"
+2022-07-22T15:37:15.570943+00:00 app[web.1]: 10.1.80.243 - - [22/Jul/2022:15:37:15 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+2022-07-22T15:37:15.571704+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=0d4e66e0-b3f6-43b7-8ca6-453f966aa537 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:15.730674+00:00 app[web.1]: 10.1.80.243 - - [22/Jul/2022:15:37:15 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "https://dataset-labelling-app.herokuapp.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+2022-07-22T15:37:15.731694+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=dataset-labelling-app.herokuapp.com request_id=eaf43b35-7094-4234-a2fc-721806785ebc fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:50.642311+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=e13a6a29-368a-4f37-b6c2-91f64881b5a6 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:50.648404+00:00 app[web.1]: 10.1.28.159 - - [22/Jul/2022:15:37:50 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+2022-07-22T15:37:50.873129+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=dataset-labelling-app.herokuapp.com request_id=f36381a6-21fd-4601-aac6-018bd9406d94 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:50.878379+00:00 app[web.1]: 10.1.28.159 - - [22/Jul/2022:15:37:50 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "https://dataset-labelling-app.herokuapp.com/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+2022-07-22T15:37:59.513362+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=013d5dbc-a1f1-4b54-aef7-ad1d627d2310 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:37:59.518672+00:00 app[web.1]: 10.1.28.159 - - [22/Jul/2022:15:37:59 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+2022-07-22T15:38:11.231566+00:00 app[web.1]: 10.1.80.243 - - [22/Jul/2022:15:38:11 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+2022-07-22T15:38:11.232516+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=f714f237-62b1-4387-99cb-ff54f2968203 fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:39:08.158916+00:00 app[web.1]: 10.1.44.242 - - [22/Jul/2022:15:39:08 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+2022-07-22T15:39:08.158941+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=8c067954-a8c9-4456-bfa6-1d3f58fcc32f fwd="83.171.167.9" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=https
+2022-07-22T15:40:13.081071+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=78971534-0f2a-492d-9d79-25fc28809479 fwd="83.171.167.9" dyno=web.1 connect=0ms service=1ms status=404 bytes=368 protocol=https
+2022-07-22T15:40:13.082643+00:00 app[web.1]: 10.1.17.176 - - [22/Jul/2022:15:40:13 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+2022-07-22T15:47:02.880140+00:00 app[web.1]: 10.1.17.87 - - [22/Jul/2022:15:47:02 +0000] "GET / HTTP/1.1" 404 207 "-" "Mozilla/5.0 (Linux; Android 11; GM1911) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36"
+2022-07-22T15:47:02.880363+00:00 heroku[router]: at=info method=GET path="/" host=dataset-labelling-app.herokuapp.com request_id=554d9eb5-ea0b-4dd8-866c-f64b1e702e11 fwd="111.92.28.76" dyno=web.1 connect=0ms service=2ms status=404 bytes=368 protocol=http
+2022-07-22T15:47:03.250853+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=dataset-labelling-app.herokuapp.com request_id=c8306a03-bf98-4ada-904c-17c2461bacec fwd="111.92.28.76" dyno=web.1 connect=0ms service=1ms status=404 bytes=368 protocol=http
+2022-07-22T15:47:03.250876+00:00 app[web.1]: 10.1.17.87 - - [22/Jul/2022:15:47:03 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "http://dataset-labelling-app.herokuapp.com/" "Mozilla/5.0 (Linux; Android 11; GM1911) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36"
