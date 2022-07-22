@@ -1,0 +1,94 @@
+{% extends "base2.html" %}
+
+{% block content %}
+
+<div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{messages[0]}}. Please enter values other than 0
+        </div>
+    {% endif %}
+    {% endwith %}
+
+<div class="columns">
+
+    <div class="column">
+        <figure class="image">
+            <img src="{{image_1_url}}" title="Image-1">
+            <!-- <img src="/Users/manu/manu-data/Academics/SS-22/IDP/resized_images/aaron-siskind_chicago-6-1961.jpg" title="Image-1">             -->
+        </figure>
+    </div>
+
+    <div class="column">
+        <figure class="image">
+            <img src="{{image_2_url}}" title="Image-2">
+            <!-- <img src="/Users/manu/manu-data/Academics/SS-22/IDP/resized_images/georges-braque_wineglass-bottle-of-bass-1914.jpg" title="Image-2">             -->
+        </figure>
+    </div> 
+
+</div>
+
+<br>
+
+<div class="columns">
+<div class="column">
+    <form method="POST" action="/dataset">
+        <!-- <label for="slider1WithValue">Negative</label> -->
+        <!-- <span id="neg1" class="labelnegslider1"> Negative</span> -->
+        <input autocomplete="off" id="slider1WithValue" name="slider1WithValue" class="slider1" width="50%" min="-5" max="5" default="0" step="0.1" type="range" onChange="rangeSlide1(this.value)">
+        <input type="hidden" name = "image_1_id" value = "{{image_1_id}}">
+        <span id="rangeValue1">0</span>
+
+        <!-- <label for="slider2WithValue">Negative</label> -->
+        <!-- <span id="high1" class="labelposslider2"> Positive</span>     -->
+        <input autocomplete="off" id="slider2WithValue" name="slider2WithValue" class="slider2 " width="50%" min="-5" max="5" default="0" step="0.1" type="range" onChange="rangeSlide2(this.value)">
+        <input type="hidden" name="image_2_id" value = "{{image_2_id}}">
+        <span id="rangeValue2">0</span>
+    <!-- <span id="neg1" class="labelnegslider1">Very Negative</span> -->
+    <!-- <span id="high1" class="labelposslider2">Very Positive</span>     -->
+        <br>
+    <button class="button is-block is-info is-large is-fullwidth">Log entry</button>
+
+    </form>
+</div>
+</div>
+
+
+<style type="text/css">
+    .slider1 {
+        
+        width: 47%;
+        padding: 0;
+    }
+    .slider2 {
+        
+        width: 47%;
+        padding: 0;
+    }
+    .labelnegslider1 {
+        left: 40px;
+        top: 200px; 
+    }
+
+    .labelposslider2 {
+        left: 90px;
+        top: 200px; 
+    }    
+
+    
+
+</style>
+
+<script type="text/javascript">
+    function rangeSlide1(value1) {
+        document.getElementById('rangeValue1').innerHTML = value1;
+    }
+
+    function rangeSlide2(value2) {
+        document.getElementById('rangeValue2').innerHTML = value2;
+    }    
+</script>
+
+
+{% endblock %}

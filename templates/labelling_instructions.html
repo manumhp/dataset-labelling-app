@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h1 class="title"> -->
+
+
+<div class="column is-10 is-offset-1">    
+
+    <strong>
+    <p>
+        Thanks for filling out the form. Kindly follow the instructions ahead: - 
+        <br>
+        <br>
+        <ol>
+        <li>Click the Dataset Labelling button to rate the images </li>
+        <li>The page ahead shows two images with sliders. Use the sliders to slide through the emotions you experience after seeing the images </li>    
+        <li>A negative number denotes negative emotion, and a positive number denotes positive emotion </li>
+        <li>Click the Log entry button to submit your inputs </li>
+        <br>
+        <li><italic>It is very important that you fill out the survey before starting to label the images. Have you filled out the survey ? </italic> </li>
+        </ol>
+    </p>
+    </strong>
+</div>
+<div class="column is-10 is-offset-1">
+    <form method="post" action="/survey-check-no">
+        <button class="button is-block is-info is-fullwidth is-centered ">No</button>
+    </form>
+    <br>
+    <form method="post" action="/survey-check-yes">
+        <button class="button is-block is-info is-fullwidth is-centered ">Yes</button>
+    </form>    
+<!-- </h1> -->
+
+</div>
+
+{% endblock %}

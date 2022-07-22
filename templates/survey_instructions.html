@@ -1,0 +1,30 @@
+{% extends "base_for_survey_instructions.html" %}
+
+{% block content %}
+<div class="column is-10 is-offset-1">
+    <p>
+    Welcome, {{username}}! 
+    </p>
+
+    <br>
+    <p>
+      This is a student research project that aims to research Affective response. 
+      <br>
+      We are trying to create a generative model that would generate abstract images that would take people to certain emotional states. 
+      <br>
+      This could have implications in the field of therapy, rehabilitation, entertainment, etc. We request you to kindly follow the instructions: - <br/>
+      <br>
+
+    <ol>
+      <li>
+        <strong>Click the button Fill Survey on the top right and fill in the Personality Test</strong> <br/>
+      </li>
+      <li>
+        <strong>After successfully filling the form, click the Dataset Labelling button and follow further instructions ahead</strong>
+         <br/>
+      </li>
+    </ol>
+    </p>
+</div>
+
+{% endblock %}
