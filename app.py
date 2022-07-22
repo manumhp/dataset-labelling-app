@@ -33,7 +33,9 @@ import random
 # load_dotenv()
 
 app =  Flask(__name__, template_folder='templates')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
+
 
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy(app)
@@ -360,3 +362,10 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 # return app
+
+
+
+
+# postgresql-octagonal-09687 as DATABASE_URL
+
+# heroku-postgresql:hobby-dev on ⬢ dataset-labelling-app...
