@@ -64,7 +64,9 @@ class ResponseInfo(UserMixin, db.Model):
     image_1_score = db.Column(db.Float)
     image_2_score = db.Column(db.Float)    
 
-
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
@@ -127,9 +129,7 @@ def logout():
     return redirect(url_for('index'))
     # return render_template('logout.html')
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    return render_template('index.html')
+
 
 @app.route('/survey_instructions')
 @login_required
