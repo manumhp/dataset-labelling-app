@@ -64,7 +64,7 @@ class ResponseInfo(UserMixin, db.Model):
     image_1_score = db.Column(db.Float)
     image_2_score = db.Column(db.Float)    
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return render_template('index.html')
 
@@ -357,7 +357,8 @@ def load_user(user_id):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port = int(os.env.get('PORT',5000), debug=True))
+    #app.run(host='0.0.0.0', port = int(os.env.get('PORT',5000), debug=True))
+    app.run()
 
 # return app
 
