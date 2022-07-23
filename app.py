@@ -329,7 +329,7 @@ def dataset_post():
 
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
 
-app.config['SERVER_NAME'] = '127.0.0.1:5000'
+# app.config['SERVER_NAME'] = '127.0.0.1:5000'
 
 # db = SQLAlchemy()
 
