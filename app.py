@@ -35,7 +35,7 @@ import random
 
 app =  Flask(__name__, template_folder='templates')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
 
 
 # init SQLAlchemy so we can use it later in our models
@@ -264,11 +264,6 @@ def read_random_images():
     result = {"image_1": result_first, "image_2": result_second}
     return result
 
-# @app.route('/dataset_entry_reshow', methods=['GET'])
-# @login_required
-# def dataset_entry_reshow(url1, url2, id1, id2):
-#     return render_template('dataset4.html', id=current_user.id, image_1_url = url1, image_2_url = url2, image_1_id = id1, image_2_id = id2)
-
 
 
 
@@ -301,22 +296,12 @@ def dataset_post():
             }
 
         }
-        # print(images['image_1']['image_url'])
-        # print(images['image_2']['image_url'])
-        # print(images['image_1']['image_id'])
-        # print(images['image_2']['image_id'])
 
-        # render_template('dataset4.html', id=current_user.id, image_1_url = image_1_url, image_2_url = image_2_url, image_1_id = image_1_id, image_2_id = image_2_id)
-        # return
-        # return redirect(url_for('dataset', images=images))
+        zero_message = "Please do not give a 0 for both images"
+        flash(zero_message)
+
         return redirect(url_for('dataset', image_1_url=image_1_url, image_2_url=image_2_url, image_1_id=image_1_id, image_2_id= image_2_id))
     else:
-        # response_info = ResponseInfo.query.filter_by(image_1_id=image_1_id, image_2_id= image_2_id,
-        #                                             labeller_id = user_id).first()
-        
-        # if response_info:
-        #     flash('Dataset entry already exists in the database')        
-        #     return redirect(url_for('dataset'))
 
         new_response = ResponseInfo(labeller_id = user_id, image_1_id=image_1_id, image_2_id=image_2_id, image_1_score=image_1_score, image_2_score=image_2_score)
 
@@ -329,9 +314,6 @@ def dataset_post():
 
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
 
-# app.config['SERVER_NAME'] = '127.0.0.1:5000'
-
-# db = SQLAlchemy()
 
 db.init_app(app)
 
@@ -345,20 +327,12 @@ login_manager.init_app(app)
 def load_user(user_id):
     return Labeller.query.get(int(user_id))
 
-# blueprint for auth routes in our app
-# from .auth import auth as auth_blueprint
-# app.register_blueprint(auth_blueprint)
-
-# blueprint for non-auth parts of app
-# from .main import main as main_blueprint
-# app.register_blueprint(main_blueprint)
-
-# app.run(host = 'localhost', port = int(os.env.get('PORT', 5000)))
 
 
 if __name__ == '__main__':
-    app.run(host='dataset-labelling-tool.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))
-    #app.run()
+    # app.run(host='dataset-labelling-tool.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))
+    # app.run(host='dataset-labelling-tool.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))    
+    app.run()
 
 # return app
 
