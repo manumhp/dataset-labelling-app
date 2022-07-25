@@ -1,12 +1,11 @@
-from crypt import methods
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+
+
+
+
 import os
 # from flask_migrate import migrate
-from flask import request
-from flask_login import UserMixin
 
+from crypt import methods
 # from dotenv import load_dotenv
 from sqlalchemy import ForeignKey
 
@@ -14,19 +13,14 @@ from sqlalchemy import ForeignKey
 from cProfile import label
 from hashlib import new
 from click import password_option
-from flask import Blueprint, flash, render_template, redirect, url_for, request
-from werkzeug.security import generate_password_hash, check_password_hash
-# from .models import Labeller
-from flask_login import login_user, login_required, logout_user
 
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from asyncore import read
 from platformdirs import user_cache_dir, user_config_dir
-from flask import Blueprint, render_template,redirect, url_for, request, flash
-from flask_login import login_required, current_user
-# from nbformat import read
-# from . import db
-# from .models import ImageInfo, Labeller, ResponseInfo
+from flask import Blueprint, render_template,redirect, url_for, request, flash, Flask
+from flask_login import LoginManager, login_required, current_user, login_user, login_required, logout_user, UserMixin
+from flask_sqlalchemy import SQLAlchemy
 import random
 
 
@@ -34,11 +28,10 @@ import random
 # load_dotenv()
 
 app =  Flask(__name__, template_folder='templates')
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
-
+ 
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SECRET_KEY'] = 'secret-key-goes-here'
 
 
 # init SQLAlchemy so we can use it later in our models
@@ -83,7 +76,6 @@ def login_post():
     remember = True if request.form.get('remember') else False
 
     labeller = Labeller.query.filter_by(username=username).first()
-    # print("Email hash : ", generate_password_hash(email, method='sha256'))
 
     # check if the user exists
     # take the user supplied password, hash it and compare it against the hashed password stored in the database
@@ -101,7 +93,6 @@ def signup():
 @app.route('/signup', methods=['POST'])
 def signup_post():
     # code to validate and add user to database
-    # email = request.form.get('email')
     username = request.form.get('username')
     password = request.form.get('password')
 
@@ -130,8 +121,6 @@ def signup_post():
 def logout():
     logout_user()
     return redirect(url_for('index'))
-    # return render_template('logout.html')
-
 
 
 @app.route('/survey_instructions')
@@ -179,50 +168,6 @@ def display_dataset_page(template, id, image_1_url , image_2_url , image_1_id , 
 @app.route('/dataset', methods=['GET'])
 @login_required
 def dataset():
-
-    ## check the database if the user is logging his 20th databaset entry. If so, repeat the first databaset entry
-    
-    # response_info = ResponseInfo.query.filter_by(labeller_id = current_user.id).all()
-    # i = 0
-
-    # df = DataFrame(response_info[0].fetchall())
-    # df.columns = response_info[0].keys()
-
-
-    # # for response in response_info:
-    # #     i = i+1
-    
-    #     # if len(response_info) % 20 == 0:
-
-    # # print("Response type is ", type(response))
-    # print("Response info type is ", type(response_info))
-
-    # print("First Response info ", response_info[0])
-
-    # print("Dataframe is ")
-    # print(df)
-    
-
-
-    # print("First Response info type ", type(response_info[0]))
-
-    # rinfo = response_info[0]
-
-    # print("First info fields", response_info.image_1_url)
-
-    # print("First info fields", rinfo.image_1_url)
-
-    # counts = len(response_info)
-    # print(counts)
-    # print("url is", response_info[2].query.with_entities((response_info.image_1_url)))
-    
-    # response_info[2]
-    # if counts%2 == 0:
-        
-
-
-    ## code from display random images
-    ## get the urls for two random images from the database and display them
     image_1_url = request.args.get('image_1_url')
     image_2_url = request.args.get('image_2_url')
     image_1_id = request.args.get('image_1_id')
@@ -246,7 +191,6 @@ def dataset():
 
     return displayed_page
 
-    # return render_template('dataset4.html', id=current_user.id, image_1_url = url1, image_2_url = url2, image_1_id = id1, image_2_id = id2)
 
 def read_random_images():
     print("Random images generated")
@@ -315,7 +259,7 @@ def dataset_post():
 
     
 
-app.config['SECRET_KEY'] = 'secret-key-goes-here'
+
 
 
 db.init_app(app)
@@ -324,24 +268,11 @@ login_manager = LoginManager()
 login_manager.login_view = 'app.login'
 login_manager.init_app(app)
 
-# from .models import Labeller
 @login_manager.user_loader
 
 def load_user(user_id):
     return Labeller.query.get(int(user_id))
 
 
-
 if __name__ == '__main__':
-    # app.run(host='dataset-labelling-tool.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))
-    # app.run(host='dataset-labelling-tool.herokuapp.com', port = int(os.env.get('PORT',5000), debug=True))    
     app.run()
-
-# return app
-
-
-
-
-# postgresql-octagonal-09687 as DATABASE_URL
-
-# heroku-postgresql:hobby-dev on ⬢ dataset-labelling-app...
