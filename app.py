@@ -61,8 +61,8 @@ class ResponseInfo(UserMixin, db.Model):
 
     dataset_entry_id = db.Column(db.Integer, primary_key=True)
     labeller_id = db.Column(db.Integer, ForeignKey("labeller_info.id"))
-    image_1_id = db.Column(db.Integer, ForeignKey("image_info.image_id"))
-    image_2_id = db.Column(db.Integer, ForeignKey("image_info.image_id"))
+    image_1_id = db.Column(db.String(200), ForeignKey("image_info.image_id"))
+    image_2_id = db.Column(db.String(200), ForeignKey("image_info.image_id"))
     
     image_1_score = db.Column(db.Float)
     image_2_score = db.Column(db.Float)    
