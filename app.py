@@ -35,7 +35,10 @@ import random
 
 app =  Flask(__name__, template_folder='templates')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fwzgznnknmcqon:176a664ab3a2f047c75da3cf19abfc59410a0b827716371d19e8b1e63367b2f6@ec2-54-225-234-165.compute-1.amazonaws.com:5432/d4rcp16emkf94j'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+
 
 
 # init SQLAlchemy so we can use it later in our models
