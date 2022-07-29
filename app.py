@@ -22,15 +22,17 @@ from flask import Blueprint, render_template,redirect, url_for, request, flash, 
 from flask_login import LoginManager, login_required, current_user, login_user, login_required, logout_user, UserMixin
 from flask_sqlalchemy import SQLAlchemy
 import random
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 
 
 app =  Flask(__name__, template_folder='templates')
  
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL'].replace("://", "ql://", 1)
 
-app.config['SECRET_KEY'] = str(os.environ.get('SECRET_KEY'))
+app.config['SECRET_KEY'] = str(os.environ['SECRET_KEY'])
 
 
 # init SQLAlchemy so we can use it later in our models
