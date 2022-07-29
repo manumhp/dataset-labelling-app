@@ -32,9 +32,12 @@ app =  Flask(__name__, template_folder='templates')
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ycerrcpmroylfy:5f524899bde85121721809663358e217356e93a4f60b6abd061141a820800245@ec2-52-30-75-37.eu-west-1.compute.amazonaws.com:5432/dqa2vcc98nbm2'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ycerrcpmroylfy:5f524899bde85121721809663358e217356e93a4f60b6abd061141a820800245@ec2-52-30-75-37.eu-west-1.compute.amazonaws.com:5432/dqa2vcc98nbm2'
 
-app.config['SECRET_KEY'] = 'secret-key-goes-here'
+# app.config['SQLALCHEMY_DATABASE_URI'] = str(os.environ.get('DATABASE_URL'))
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+# app.config['SECRET_KEY'] = 'secret-key-goes-here'
+app.config['SECRET_KEY'] = str(os.environ.get('SECRET_KEY'))
 
 
 # init SQLAlchemy so we can use it later in our models
