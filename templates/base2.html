@@ -37,6 +37,12 @@
                                 Sign Up
                             </a>
                             {% endif %}
+
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('labelling_instructions') }}" class="navbar-item">
+                                Labelling Instructions
+                            </a>
+                                                        
                             {% if current_user.is_authenticated %}
                             <a href="{{ url_for('dataset') }}" class="navbar-item">
                                 Dataset labelling
