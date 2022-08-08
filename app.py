@@ -143,6 +143,9 @@ def display_survey(survey_template):
 def survey():
     return display_survey('survey5.html')
 
+###3 survey POST... Shows that the survey has been submitted
+### create an entry in the table 
+
 @app.route('/labelling_instructions')
 @login_required
 def labelling_instructions():
@@ -194,7 +197,6 @@ def dataset():
 
 
 def read_random_images():
-    print("Random images generated")
     images = ImageInfo.query.all()
     results = [
         {
